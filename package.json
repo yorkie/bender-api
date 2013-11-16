@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "API for Bender",
   "author": "Vigour.io <dev@vigour.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigour-io/bender-api.git"
+  },
   "license": "MIT",
   "main": "./lib/bender-api.js",
   "dependencies": {
