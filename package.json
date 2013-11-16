@@ -1,0 +1,11 @@
+{
+  "name": "bender-api",
+  "version": "0.0.0",
+  "description": "API for Bender",
+  "author": "Vigour.io <dev@vigour.io>",
+  "license": "MIT",
+  "main": "./lib/bender-api.js",
+  "dependencies": {
+    "jsonquest": "~0.2.1"
+  }
+}
