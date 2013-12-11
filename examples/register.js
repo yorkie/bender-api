@@ -2,8 +2,9 @@ var http = require('http');
 var bender = require('../')();
 
 http.createServer(function (req, res) {
+  console.log('Got request!');
   res.writeHead(200, { 'content-type': 'text/html' });
-  res.write('<h1>Hello world!</h1>');
+  res.write('<h1>Hello world from ' + this.address().port + '!</h1>\n');
   res.end();
 }).listen(function () {
   var port = this.address().port;
