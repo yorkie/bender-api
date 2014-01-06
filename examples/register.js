@@ -9,14 +9,16 @@ http.createServer(function (req, res) {
 }).listen(function () {
   var port = this.address().port;
   var host = this.address().host || '127.0.0.1';
-  setInterval(function () {
-    bender.registrations.register({
-      app: 'hello-world',
-      version: '1.0.0',
-      host: host,
-      port: port
-    });
 
+  bender.register({
+    app: 'hello-world',
+    version: '1.0.0',
+    host: host,
+    port: port,
+    interval: 1000
+  });
+
+  setInterval(function () {
     bender.registrations.list('hello-world', '1.0.0', function (err, registrations) {
       if (err) {
         console.error('Error: ' + err.message);
