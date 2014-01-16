@@ -10,27 +10,25 @@ http.createServer(function (req, res) {
   var port = this.address().port;
   var host = this.address().host || '127.0.0.1';
 
-  bender.register({
+  bender.startRegistering({
     app: 'hello-world',
     version: '1.0.0',
     host: host,
-    port: port,
-    interval: 1000
+    port: port
   });
 
   setInterval(function () {
-    bender.registrations.list('hello-world', '1.0.0', function (err, registrations) {
+    bender.getRegistrations('hello-world', '1.0.0', function (err, registrations) {
       if (err) {
         console.error('Error: ' + err.message);
         return;
       }
 
-      registrations = registrations.registrations;
       console.log('Registrations:');
       registrations.forEach(function (registration) {
         console.log('  ' + registration.host + ':' + registration.port);
       });
       console.log();
     });
-  }, 3000);
+  }, 2000);
 });
